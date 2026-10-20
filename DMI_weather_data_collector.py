@@ -370,11 +370,11 @@ if __name__ == '__main__':
     
     df = calc_average(data, average)
     params_station = connect_param_and_stations(data)
-    if "cloud_cover" in params:
+    if "cloud_cover" in df.columns.tolist():
         df["cloud_cover"] = df["cloud_cover"] / 100
-    if "humidity" in params:
+    if "humidity" in df.columns.tolist():
         df["humidity"] = df["humidity"] / 100
-    if "pressure" in params:
+    if "pressure" in df.columns.tolist():
         df["pressure"] = df["pressure"] * 100
     
     
